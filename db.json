@@ -1,1 +1,13 @@
-{}
+{
+    "visitante":{
+        "visitante_id": "integer unique autoincrement",
+        "visitante_name":"varchar(80)",
+        "visitante_cpf":"",
+        "visitante_genêro":"interger",
+        "visitante_idade":"interger",
+        "visitante_profissao":"varchar(50)",
+        "visitante_cep":"",
+        "visitante_cidade":"",
+        "visitante_bairro":""
+    }
+}
