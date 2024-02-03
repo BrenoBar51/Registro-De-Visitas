@@ -1,6 +1,6 @@
 const DB = require('../database/index');
 const jwt = require('jsonwebtoken');
-const tabela = 'users';
+const tabela = 'usuario';
 
 async function logar(data){
     try{
