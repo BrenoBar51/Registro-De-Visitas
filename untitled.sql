@@ -18,5 +18,13 @@ CREATE TABLE `usuario` (
 	PRIMARY KEY (`usuario_id`)
 );
 
+INSERT INTO visitante (visitante_nome, visitante_idade, visitante_profissao, visitante_cidade, visitante_bairro, visitante_genero, visitante_cpf) VALUES
+	('Breno', '19', 'desenvolvedor', 'Fortaleza', 'aldeota', 1 , '70060050090'),
+	('Orfeu', '19', 'desenvolvedor', 'Fortaleza', 'aldeota', 1 , '60050040080'),
+	('Kleber', '19', 'desenvolvedor', 'Fortaleza', 'aldeota', 1 , '90030050080');
 
 
+INSERT INTO usuario (usuario_email, usuario_senha) VALUES
+	('breno@gmail.com', 'breno123'),
+	('orfeu@gmail.com', 'orfeu123'),
+	('kleber@gmail.com', 'kleber123');
