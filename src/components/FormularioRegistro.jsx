@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function FormularioRegistro() {
+
+  const [nome, setNome] = useState("");
 
     function RegistrarVisitante(){
         fetch('http://localhost:8000/visitante', {
