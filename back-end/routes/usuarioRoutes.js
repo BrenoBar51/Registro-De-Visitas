@@ -6,4 +6,8 @@ router.post('/login', async (req, res) => {
     res.send(await controller.logar(req.body));
 });
 
+router.get('/', async (req, res) => {
+    res.send(await controller.listar());
+})
+
 module.exports = router;

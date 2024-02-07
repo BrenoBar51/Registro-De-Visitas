@@ -5,7 +5,8 @@ async function execute(sql){
         host: 'localhost',
         user: 'root',
         password: '1234',
-        database: 'museu_api'
+        database: 'museu_api',
+        port: 3307
     });
 
     let [results] = await con.query(sql);
