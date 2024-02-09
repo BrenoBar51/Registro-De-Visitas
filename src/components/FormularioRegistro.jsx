@@ -4,26 +4,34 @@ import { NavLink } from "react-router-dom";
 export default function FormularioRegistro() {
 
   const [nome, setNome] = useState("");
+  const [cpf, setCPF] = useState("");
+  const [idade, setIdade] = useState("");
+  const [profissao, setProfissao] = useState("");
+  const [genero, setGenero] = useState("");
+  const [bairro, setBairro] = useState("");
+  const [cidade, setCidade] = useState("");
+  const navigate = useNavigate();
 
-    function RegistrarVisitante(){
-        fetch('http://localhost:8000/visitante', {
-            method:"Post",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify({
-                nome: "Gleidson",
-                idade: 50,
-                profissao: "desenvolvedor brabo",
-                cidade: "Fortaleza",
-                bairro: "aldeota",
-                genero: 1,
-                cpf: "76869950090"
-            })
-        })
-    }
+  function RegistrarVisitante() {
+    fetch('http://localhost:8000/visitante/cadastrar', {
+      method: "Post",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({ nome, cpf, idade, profissao, genero, bairro, cidade }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.message == "Visitante cadastrado com sucesso") {
+          navigate("/telaconclusao")
+        }
+        if (res.message == "Falha ao cadastar visitante") {
+          alert("Informações insuficientes")
+        }
+      });
+  }
   return (
-    <div className="bg-white mx-auto max-w- px-[30px] py-[110px]  shadow">
+    <div className="bg-white mx-auto px-[30px] py-[110px] shadow">
       <h1 className="text-[35px] relative left-[20px] bottom-[60px]">
         Seja bem-vindo(a) visitante
       </h1>
@@ -31,6 +39,9 @@ export default function FormularioRegistro() {
         <div>
           <h2>nome do visitante</h2>
           <input
+            onChange={(e) => {
+              setNome(e.target.value)
+            }}
             className="appearance-none block w-full px-12 py-3 leading-tight
                 text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
                  rounded focus:outline-none"
@@ -38,6 +49,9 @@ export default function FormularioRegistro() {
           />
           <h2>CPF</h2>
           <input
+          onChange={(e) => {
+            setCPF(e.target.value)
+          }}
             className="appearance-none webkit-appearance resize-none block w-full px-12 py-3 leading-tight
                 text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
                  rounded focus:outline-none"
@@ -45,6 +59,9 @@ export default function FormularioRegistro() {
           />
           <h2>Profissão</h2>
           <input
+          onChange={(e) => {
+            setProfissao(e.target.value)
+          }}
             className="appearance-none block w-full px-12 py-3 leading-tight
                 text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
                  rounded focus:outline-none"
@@ -98,7 +115,9 @@ export default function FormularioRegistro() {
           to={"/telaconclusao"}
           className={({ isActive }) => (isActive ? "" : "")}
         >
-          <button className="inline-block  relative top-[81px] w-full px-8 py-4 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow">
+          <button onChange={() => {
+            cadastar( nome, cpf, idade, profissao, genero, bairro, cidade)
+          }} className="inline-block  relative top-[81px] w-full px-8 py-4 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow">
             Enviar
           </button>
         </NavLink>

@@ -16,8 +16,11 @@ export default function FormularioLogin() {
     })
       .then((res) => res.json())
       .then((res) => {
-        if(res.message == "OK"){
-            navigate("/teladashboard")
+        if (res.message == "OK") {
+          navigate("/teladashboard")
+        }
+        if (res.message == "Usuário ou senha estão incorretos") {
+          alert("Usuário ou senha estão incorretos")
         }
       });
   }
@@ -52,9 +55,9 @@ export default function FormularioLogin() {
       >
         Entrar
       </button>
-      <div className="flex flex-col-reverse">  
-        registrar-se
-        <a href="#" className="relative top-12">
+      <div className="flex  flex-col-reverse">
+        <a href="#">Registrar-se</a>
+        <a href="#" className="gap-y-4 relative top-12">
           esqueceu a senha?
         </a>
       </div>
