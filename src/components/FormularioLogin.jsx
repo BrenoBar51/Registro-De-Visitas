@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function FormularioLogin() {
   const [email, setEmail] = useState("");
@@ -20,49 +20,47 @@ export default function FormularioLogin() {
           navigate("/teladashboard")
         }
         if (res.message == "Usuário ou senha estão incorretos") {
-          alert("Usuário ou senha estão incorretos")
+          navigate("/telaregistro")
         }
       });
   }
 
   return (
-    <div className="bg-white mx-auto max-w-md py-20 px-20 shadow  ">
-      <h1 className="text-5xl relative left-[80px] bottom-[40px]">Login</h1>
-      <h2>email</h2>
-      <input
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-        type="text"
-        className="appearance-none block w-full px-12 py-3 leading-tight
-                text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
-                 rounded focus:outline-none"
-      />
-      <h2>senha</h2>
-      <input
-        onChange={(e) => {
-          setSenha(e.target.value);
-        }}
-        type="password"
-        className="appearance-none block w-full px-14 py-3 leading-tight text-gray-700 bg-gray-50 focus:bg-white border
-                   border-gray-200 focus:border-gray-500 rounded focus:outline-none"
-      ></input>
-      <button
-        onClick={() => {
-          login(email, password);
-        }}
-        className="inline-block  relative top-7 w-full px-8 py-4 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
-      >
-        Entrar
-      </button>
-      <div className="flex  flex-col-reverse">
-      <NavLink
-          to={"/telaregistro"}
-          className={({ isActive }) => (isActive ? "" : "")}
-        >Registrar-se</NavLink>
-        <a href="#" className="gap-y-4 relative top-12">
-          esqueceu a senha?
-        </a>
+    <div className="flex justify-center">
+      <div className="grid place-items-center gap-y-6 h-fit w-[80vh] border rounded-xl bg-white shadow">
+        <h1 className="text-5xl font-medium pt-8">Login</h1>
+        <h2 className="font-semibold pr-[22rem]">Email</h2>
+        <input
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+          type="text" className="w-full px-10 py-3
+        text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
+          rounded-lg focus:outline-none"
+        />
+        <h2 className="font-semibold pr-[22rem]">Senha</h2>
+        <input
+          onChange={(e) => {
+            setSenha(e.target.value);
+          }}
+          type="password" className="w-full px-10 py-3
+          text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
+           rounded-lg focus:outline-none"
+        />
+        <button
+          onClick={() => {
+            login(email, password);
+          }}
+          className="inline-block  relative top-7 w-full px-8 py-4 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+        >
+          Entrar
+        </button>
+        <button
+          onClick={() => {
+            login(email, password);
+          }}
+          className="inline-block relative top-7 w-full px-8 py-4 leading-none text-white bg-red-600 hover:bg-red-700 font-semibold rounded shadow"
+        >Registrar-se</button>
       </div>
     </div>
   );
