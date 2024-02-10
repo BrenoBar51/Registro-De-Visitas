@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function FormularioLogin() {
   const [email, setEmail] = useState("");
   const [password, setSenha] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function login(email, password) {
     fetch("http://localhost:8000/usuario/login", {
@@ -56,7 +56,10 @@ export default function FormularioLogin() {
         Entrar
       </button>
       <div className="flex  flex-col-reverse">
-        <a href="#">Registrar-se</a>
+      <NavLink
+          to={"/telaregistro"}
+          className={({ isActive }) => (isActive ? "" : "")}
+        >Registrar-se</NavLink>
         <a href="#" className="gap-y-4 relative top-12">
           esqueceu a senha?
         </a>
