@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Input from "./Inputs";
 
 export default function FormularioRegistro() {
   const [nome, setNome] = useState("");
@@ -35,76 +36,49 @@ export default function FormularioRegistro() {
         <h1 className="text-4xl font-medium py-2">
           Seja Bem-Vindo(a) Visitante
         </h1>
-        <form className="w-full space-y-1">
+        <form className="w-full">
           <h2 className="font-semibold pl-[2rem]">Nome do Visitante</h2>
-          <input
+          <Input
             onChange={(e) => {
-              setNome(e.target.value)
+              setNome(e.target.value);
             }}
-            className="appearance-none block w-full px-10 py-2 leading-tight
-                text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
-                 rounded focus:outline-none"
-            type="text"
           />
           <h2 className="font-semibold pl-[2rem]">CPF</h2>
-          <input
+          <Input
             onChange={(e) => {
-              setCPF(e.target.value)
+              setCPF(e.target.value);
             }}
-            className="appearance-none webkit-appearance resize-none block w-full px-12 py-2 leading-tight
-                text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
-                 rounded focus:outline-none"
-            type="text"
           />
           <h2 className="font-semibold pl-[2rem]">Profissão</h2>
-          <input
+          <Input
             onChange={(e) => {
-              setProfissao(e.target.value)
+              setProfissao(e.target.value);
             }}
-            className="appearance-none block w-full px-12 py-2 leading-tight
-                text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
-                 rounded focus:outline-none"
-            type="text"
           />
-          <div className="grid grid-cols-1 gap-y-1">
+          <div className="grid grid-cols-1">
             <h2 className="font-semibold pl-[2rem]">Gênero</h2>
-            <input
+            <Input
               onChange={(e) => {
-                setGenero(e.target.value)
+                setGenero(e.target.value);
               }}
-              className="appearance-none block w-full px-12 py-2 leading-tight
-                text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
-                 rounded focus:outline-none"
-              type="text"
             />
             <h2 className="font-semibold pl-[2rem]">Idade</h2>
-            <input
+            <Input
               onChange={(e) => {
-                setIdade(e.target.value)
+                setIdade(e.target.value);
               }}
-              className="appearance-none block w-full px-12 py-2 leading-tight
-                text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
-                 rounded focus:outline-none"
-              type="text"
             />
             <h2 className="font-semibold pl-[2rem]">Cidade</h2>
-            <input
+            <Input
               onChange={(e) => {
-                setCidade(e.target.value)
+                setCidade(e.target.value);
               }}
-              className="appearance-none block w-full px-12 py-2 leading-tight
-                text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
-                 rounded focus:outline-none"
-              type="text" />
+            />
             <h2 className="font-semibold pl-[2rem]">Bairro</h2>
-            <input
+            <Input
               onChange={(e) => {
-                setBairro(e.target.value)
+                setBairro(e.target.value);
               }}
-              className="appearance-none block w-full px-12 py-2 leading-tight
-                text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
-                 rounded focus:outline-none"
-              type="text"
             />
           </div>
           <button onClick={() => {

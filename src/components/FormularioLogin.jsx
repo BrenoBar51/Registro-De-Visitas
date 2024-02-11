@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Input from "./Inputs";
 
 export default function FormularioLogin() {
   const [email, setEmail] = useState("");
@@ -30,23 +31,15 @@ export default function FormularioLogin() {
       <div className="grid place-items-center gap-y-6 h-fit w-[80vh] border rounded-xl bg-white shadow">
         <h1 className="text-5xl font-medium pt-8">Login</h1>
         <h2 className="font-semibold pr-[22rem]">Email</h2>
-        <input
+        <Input
           onChange={(e) => {
             setEmail(e.target.value);
-          }}
-          type="text" className="w-full px-10 py-3
-        text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
-          rounded-lg focus:outline-none"
-        />
+          }} />
         <h2 className="font-semibold pr-[22rem]">Senha</h2>
-        <input
+        <Input
           onChange={(e) => {
             setSenha(e.target.value);
-          }}
-          type="password" className="w-full px-10 py-3
-          text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500
-           rounded-lg focus:outline-none"
-        />
+          }} />
         <button
           onClick={() => {
             login(email, password);
