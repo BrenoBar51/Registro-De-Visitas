@@ -26,5 +26,4 @@ INSERT INTO visitante (visitante_nome, visitante_idade, visitante_profissao, vis
 
 INSERT INTO usuario (usuario_email, usuario_senha) VALUES
 	('breno@gmail.com', 'breno123'),
-	('orfeu@gmail.com', 'orfeu123'),
-	('kleber@gmail.com', 'kleber123');
+	('orfeu@gmail.com', 'orfeu123')

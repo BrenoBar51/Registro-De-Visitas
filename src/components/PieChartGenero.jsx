@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip } from 'recharts';
 
@@ -10,6 +11,13 @@ const data = [
 const COLORS = ['#d782ff', '#ff8291', '#82ffa5'];
 
 const PieChartGenero = () => {
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   axios.get('/api/dados')
+  //     .then(response => setData(response.data))
+  //     .catch(error => console.error('Erro ao obter dados:', error));
+  // }, []);
   return (
     <div className="w-full h-full p-4">
       <PieChart width={450} height={400}>
