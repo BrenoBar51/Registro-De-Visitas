@@ -25,18 +25,22 @@ export default function FormularioLogin() {
         }
       });
   }
-
+console.log("email: ", email);
+console.log("password: ",password);
   return (
     <div className="flex justify-center">
-      <div className="grid place-items-center gap-y-6 h-fit w-[80vh] border rounded-xl bg-white shadow">
+      <div className="grid place-items-center gap-y-6 w-full border rounded-xl bg-white shadow p-3">
         <h1 className="text-5xl font-medium pt-8">Login De Usuário</h1>
         <h2 className="font-semibold pr-[22rem]">Email</h2>
         <Input
+          value={email}
           onChange={(e) => {
+            console.log("teste", e.target.value);
             setEmail(e.target.value);
           }} />
         <h2 className="font-semibold pr-[22rem]">Senha</h2>
         <Input
+          value={password}
           onChange={(e) => {
             setSenha(e.target.value);
           }} />
@@ -52,7 +56,7 @@ export default function FormularioLogin() {
           onClick={() => {
             login(email, password);
           }}
-          className="inline-block relative top-7 w-full px-8 py-4 leading-none text-white bg-red-600 hover:bg-red-700 font-semibold rounded shadow"
+          className="inline-block relative mt-4 w-full px-8 py-4 leading-none text-white bg-red-600 hover:bg-red-700 font-semibold rounded shadow"
         >Registrar-se</button>
       </div>
     </div>

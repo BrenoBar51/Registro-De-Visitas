@@ -5,8 +5,8 @@ export default function TelaLogin() {
     return (
         <>
             <div>
-                <img src={img1} className="absolute -z-10 w-full h-[100vh]" />
-                <main className="h-[100vh]  w-auto flex items-center justify-center bg-[#d4d4d4]">
+                <img src={img1} className="absolute w-full h-[100vh]" />
+                <main className="h-[100vh]  w-auto flex items-center justify-center relative z-1">
                     <FormularioLogin />
                 </main>
             </div>

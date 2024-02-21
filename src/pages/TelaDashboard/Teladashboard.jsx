@@ -4,8 +4,10 @@ import SimpleLineChart from "../../components/Linecharts";
 import PieChartCidadeComponent from "../../components/PieChartCidade";
 import PieChartGenero from "../../components/PieChartGenero";
 import { PDF } from "../../components/pdf";
+import { useEffect } from "react";
 
 export default function TelaDashboard() {
+
   return (
     <div className="min-h-screen flex flex-col justify-center bg-[#c8ccdc]">
  
