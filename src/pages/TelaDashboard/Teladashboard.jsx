@@ -1,30 +1,37 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import BarChartComponent from "../../components/Barcharts";
-import SimpleLineChart from "../../components/Linecharts";
+import BarChartBairro from "../../components/BarChartBairro";
 import PieChartCidadeComponent from "../../components/PieChartCidade";
 import PieChartGenero from "../../components/PieChartGenero";
 import { PDF } from "../../components/pdf";
-import { useEffect } from "react";
 
 export default function TelaDashboard() {
 
   return (
-    <div className="min-h-screen flex flex-col justify-center bg-[#c8ccdc]">
- 
-    <div className="flex justify-center relative"> 
-   <div className="bg-white w-20 font-medium relative right-4    "> <PDFDownloadLink document={<PDF />}>Baixar PDF</PDFDownloadLink> </div>
-    </div> 
-
-       
-      <div className="flex justify-between">
-        <div className="bg-white relative bottom-20 left-24 h-[264px]">     <BarChartComponent /> </div>
-        <div className="bg-white relative bottom-20 right-[8.7rem] h-[270px]">   <PieChartCidadeComponent /> </div>
-      </div>
-      <div className="flex">
-        <div className="bg-white relative bottom-20 left-24 h-[270px]"> < SimpleLineChart /> </div>
-        <div className="bg-white relative left-[18.4rem] bottom-[4.5rem] h-[270px]">  <PieChartGenero /> </div>
-      </div>
-      
-    </div>
+    <main className="h-[100vh] flex justify-center items-center bg-[#c8ccdc]">
+      <section className="flex gap-y-2 flex-col">
+        <div className="flex justify-center">
+          <div className="bg-white font-medium">
+            <PDFDownloadLink document={<PDF />}>Baixar PDF</PDFDownloadLink>
+          </div>
+        </div>
+        <div className="flex justify-center h-[45vh] gap-4">
+          <div className="bg-white max-h-fit">
+            <BarChartComponent />
+          </div>
+          <div className="bg-white max-h-fit">
+            <PieChartCidadeComponent />
+          </div>
+        </div>
+        <div className="flex justify-center h-[45vh] gap-4">
+          <div className="bg-white max-h-fit">
+            <BarChartBairro /> 
+          </div>
+          <div className="bg-white max-h-fit">
+            <PieChartGenero />
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }

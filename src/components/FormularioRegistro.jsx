@@ -23,9 +23,10 @@ export default function FormularioRegistro() {
       .then((res) => res.json())
       .then((res) => {
         if (res.message == "Visitante cadastrado com sucesso") {
+          alert("Bem Vindo!")
           navigate("/telaconclusao")
         }
-        if (res.message == "Falha ao cadastar visitante") {
+        else{
           alert("Informações insuficientes")
         }
       });
@@ -33,7 +34,7 @@ export default function FormularioRegistro() {
   return (
     <div className="flex justify-center">
       <div className="grid place-items-center h-fit w-[80vh] border rounded-xl bg-white shadow">
-        <h1 className="text-4xl font-medium py-2">
+        <h1 className="text-2xl font-medium py-1">
           Seja Bem-Vindo(a) Visitante
         </h1>
         <form className="w-full">

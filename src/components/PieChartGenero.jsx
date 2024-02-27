@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, Tooltip } from 'recharts';
 
@@ -26,7 +25,7 @@ const PieChartGenero = () => {
         isLoading ? (
           <div>Carregando...</div>
         ) : (
-          <PieChart width={450} height={400}>
+          <PieChart width={480} height={250}>
             <Pie
               data={data}
               cx={200}

@@ -6,23 +6,23 @@ const BarChartComponent = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  function listarPorCidade() {
-    fetch("http://localhost:8000/visitante")
-      .then((res) => res.json())
+  function listarPorBairro() {
+    fetch('http://localhost:8000/visitante/contar-bairro')
+      .then(res => res.json())
       .then((visitantes) => {
-        let mesesValue = [0,0,0,0,0,0,0,0,0,0,0,0];
-        let mesesName = ['Jan', 'Fev','mai','abr','mar','jun','jul','ago','set','out','nov','dez'];
+        let bairrosValue = [0, 0, 0, 0];
+        let bairrosName = ['Centro', 'Aldeota', 'Parangaba', 'Papicu'];
         visitantes.map((v) => {
-          mesesValue.map((m, index) => {
-            if((index + 1) == Number(v.visitante_data.split("T")[0].split('-')[1])){
-              mesesValue[index] += 1;
+          bairrosValue.map((m, index) => {
+            if((index + 1)){
+              bairrosValue[index] += 1;
             }
           })
         })
-        let data = mesesName.map((m, index) => {
+        let data = bairrosName.map((b, index) => {
           return {
-            name: m,
-            visitas: mesesValue[index]
+            name: b,
+            visitas: bairrosValue[index]
           }
         })
         setData(data);
@@ -31,8 +31,8 @@ const BarChartComponent = () => {
   }
 
   useEffect(() => {
-    listarPorCidade();
-  }, []);
+    listarPorBairro()
+  }, [])
 
   return (
     <div className="w-full max-h-fit p-4">

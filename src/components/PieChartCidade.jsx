@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
-const COLORS = ["#D782FF", "#482b55", "#8f57aa"];
+const COLORS = ["#650094", "#0054a3", "#00a708", "#b62400", "#939600"];
 
 const PieChartCidade = () => {
   const [data, setData] = useState([]);
@@ -24,14 +24,14 @@ const PieChartCidade = () => {
       {isLoading ? (
         <div>Carregando...</div>
       ) : (
-        <PieChart width={450} height={400}>
+        <PieChart width={480} height={400}>
           <Pie
             data={data}
-            cx={200}
-            cy={110}
+            cx={225}
+            cy={126}
             labelLine={false}
             label={(entry) => `${entry.name} (${entry.value})`}
-            outerRadius={80}
+            outerRadius={100}
             fill="#8884d8"
             dataKey="value"
           >

@@ -18,28 +18,32 @@ export default function FormularioLogin() {
       .then((res) => res.json())
       .then((res) => {
         if (res.message == "OK") {
-          navigate("/teladashboard")
+          console.log("bala");
+          navigate("/teladashboard");
         }
         if (res.message == "Usuário ou senha estão incorretos") {
-          navigate("/telaregistro")
+          alert("Usuário ou senha estão incorretos!");
         }
+        console.log(res);
       });
   }
-console.log("email: ", email);
-console.log("password: ",password);
+  function registro() {
+    navigate("/telaregistro");
+  }
   return (
-    <div className="flex justify-center">
+    <form className="flex justify-center">
       <div className="grid place-items-center gap-y-6 w-full border rounded-xl bg-white shadow p-3">
         <h1 className="text-5xl font-medium pt-8">Login De Usuário</h1>
         <h2 className="font-semibold pr-[22rem]">Email</h2>
         <Input
+          type={"text"}
           value={email}
           onChange={(e) => {
-            console.log("teste", e.target.value);
             setEmail(e.target.value);
           }} />
         <h2 className="font-semibold pr-[22rem]">Senha</h2>
         <Input
+          type={"password"}
           value={password}
           onChange={(e) => {
             setSenha(e.target.value);
@@ -54,11 +58,11 @@ console.log("password: ",password);
         </button>
         <button
           onClick={() => {
-            login(email, password);
+            registro();
           }}
           className="inline-block relative mt-4 w-full px-8 py-4 leading-none text-white bg-red-600 hover:bg-red-700 font-semibold rounded shadow"
         >Registrar-se</button>
       </div>
-    </div>
+    </form>
   );
 }
