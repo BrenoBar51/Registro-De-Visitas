@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
 const COLORS = ["#650094", "#0054a3", "#00a708", "#b62400", "#939600"];

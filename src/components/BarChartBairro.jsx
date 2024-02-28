@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const BarChartComponent = () => {
@@ -10,22 +10,7 @@ const BarChartComponent = () => {
     fetch('http://localhost:8000/visitante/contar-bairro')
       .then(res => res.json())
       .then((visitantes) => {
-        let bairrosValue = [0, 0, 0, 0];
-        let bairrosName = ['Centro', 'Aldeota', 'Parangaba', 'Papicu'];
-        visitantes.map((v) => {
-          bairrosValue.map((m, index) => {
-            if((index + 1)){
-              bairrosValue[index] += 1;
-            }
-          })
-        })
-        let data = bairrosName.map((b, index) => {
-          return {
-            name: b,
-            visitas: bairrosValue[index]
-          }
-        })
-        setData(data);
+        setData(visitantes);
         setIsLoading(false);
       });
   }
@@ -42,11 +27,11 @@ const BarChartComponent = () => {
         ) : (
           <BarChart width={480} height={250} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
+            <XAxis dataKey="NAME" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="visitas" fill="#ff007c" />
+            <Bar dataKey="VALUE" fill="#ff007c" />
           </BarChart>
         )
       }

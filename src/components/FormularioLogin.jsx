@@ -1,19 +1,17 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Input from "./Inputs";
+import { useForm } from "react-hook-form";
 
 export default function FormularioLogin() {
-  const [email, setEmail] = useState("");
-  const [password, setSenha] = useState("");
   const navigate = useNavigate();
+  const {register, handleSubmit} = useForm()
 
-  function login(email, password) {
+  function login(data) {
     fetch("http://localhost:8000/usuario/login", {
       method: "Post",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((res) => {
@@ -31,27 +29,21 @@ export default function FormularioLogin() {
     navigate("/telaregistro");
   }
   return (
-    <form className="flex justify-center">
+    <form onSubmit={handleSubmit(login)} className="flex justify-center">
       <div className="grid place-items-center gap-y-6 w-full border rounded-xl bg-white shadow p-3">
         <h1 className="text-5xl font-medium pt-8">Login De Usuário</h1>
         <h2 className="font-semibold pr-[22rem]">Email</h2>
-        <Input
+        <input
           type={"text"}
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }} />
+          {...register("email", {required:true})}
+           />
         <h2 className="font-semibold pr-[22rem]">Senha</h2>
-        <Input
+        <input
           type={"password"}
-          value={password}
-          onChange={(e) => {
-            setSenha(e.target.value);
-          }} />
+          {...register("password", {required:true})}
+          />
         <button
-          onClick={() => {
-            login(email, password);
-          }}
+          type="submit"
           className="inline-block  relative top-7 w-full px-8 py-4 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
         >
           Entrar
