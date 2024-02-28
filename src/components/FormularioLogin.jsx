@@ -16,7 +16,6 @@ export default function FormularioLogin() {
       .then((res) => res.json())
       .then((res) => {
         if (res.message == "OK") {
-          console.log("bala");
           navigate("/teladashboard");
         }
         if (res.message == "Usuário ou senha estão incorretos") {
@@ -34,11 +33,17 @@ export default function FormularioLogin() {
         <h1 className="text-5xl font-medium pt-8">Login De Usuário</h1>
         <h2 className="font-semibold pr-[22rem]">Email</h2>
         <input
+          className="w-full px-10 py-3 text-gray-700 bg-gray-50 
+          focus:bg-white border border-gray-200 focus:border-gray-500 
+          rounded-lg focus:outline-none"
           type={"text"}
           {...register("email", {required:true})}
            />
         <h2 className="font-semibold pr-[22rem]">Senha</h2>
         <input
+          className="w-full px-10 py-3 text-gray-700 bg-gray-50 
+          focus:bg-white border border-gray-200 focus:border-gray-500 
+          rounded-lg focus:outline-none"
           type={"password"}
           {...register("password", {required:true})}
           />
