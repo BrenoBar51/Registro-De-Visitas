@@ -3,7 +3,7 @@ import BarChartComponent from "../../components/Barcharts";
 import BarChartBairro from "../../components/BarChartBairro";
 import PieChartCidadeComponent from "../../components/PieChartCidade";
 import PieChartGenero from "../../components/PieChartGenero";
-import { PDF } from "../../components/pdf";
+import { PDF } from "../../components/Pdf.jsx";
 
 export default function TelaDashboard() {
 
