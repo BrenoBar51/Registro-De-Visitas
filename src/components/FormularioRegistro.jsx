@@ -33,21 +33,21 @@ export default function FormularioRegistro() {
         <form onSubmit={handleSubmit(registrarVisitante)} className="w-full">
           <h2 className="font-semibold pl-[2rem]">Nome do Visitante</h2>
           <input
-            className="w-full px-10 py-3 text-gray-700 bg-gray-50 
+            className="w-full px-5 py-3 text-gray-700 bg-gray-50 
             focus:bg-white border border-gray-200 focus:border-gray-500 
             rounded-lg focus:outline-none"
             {...register("nome", { required: true })}
           />
           <h2 className="font-semibold pl-[2rem]">CPF</h2>
           <input
-            className="w-full px-10 py-3 text-gray-700 bg-gray-50 
+            className="w-full px-5 py-3 text-gray-700 bg-gray-50 
             focus:bg-white border border-gray-200 focus:border-gray-500 
             rounded-lg focus:outline-none"
             {...register("cpf", { required: true })}
           />
           <h2 className="font-semibold pl-[2rem]">Profissão</h2>
           <input
-            className="w-full px-10 py-3 text-gray-700 bg-gray-50 
+            className="w-full px-5 py-3 text-gray-700 bg-gray-50 
             focus:bg-white border border-gray-200 focus:border-gray-500 
             rounded-lg focus:outline-none"
             {...register("profissao", { required: true })}
@@ -55,28 +55,28 @@ export default function FormularioRegistro() {
           <div className="grid grid-cols-1">
             <h2 className="font-semibold pl-[2rem]">Gênero</h2>
             <input
-              className="w-full px-10 py-3 text-gray-700 bg-gray-50 
+              className="w-full px-5 py-3 text-gray-700 bg-gray-50 
               focus:bg-white border border-gray-200 focus:border-gray-500 
               rounded-lg focus:outline-none"
               {...register("genero", { required: true })}
             />
             <h2 className="font-semibold pl-[2rem]">Idade</h2>
             <input
-              className="w-full px-10 py-3 text-gray-700 bg-gray-50 
+              className="w-full px-5 py-3 text-gray-700 bg-gray-50 
               focus:bg-white border border-gray-200 focus:border-gray-500 
               rounded-lg focus:outline-none"
               {...register("idade", { required: true })}
             />
             <h2 className="font-semibold pl-[2rem]">Cidade</h2>
             <input
-              className="w-full px-10 py-3 text-gray-700 bg-gray-50 
+              className="w-full px-5 py-3 text-gray-700 bg-gray-50 
               focus:bg-white border border-gray-200 focus:border-gray-500 
               rounded-lg focus:outline-none"
               {...register("cidade", { required: true })}
             />
             <h2 className="font-semibold pl-[2rem]">Bairro</h2>
             <input
-              className="w-full px-10 py-3 text-gray-700 bg-gray-50 
+              className="w-full px-5 py-3 text-gray-700 bg-gray-50 
               focus:bg-white border border-gray-200 focus:border-gray-500 
               rounded-lg focus:outline-none"
               {...register("bairro", { required: true })}

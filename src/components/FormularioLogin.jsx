@@ -31,9 +31,10 @@ export default function FormularioLogin() {
     <form onSubmit={handleSubmit(login)} className="flex justify-center">
       <div className="grid place-items-center gap-y-6 w-full border rounded-xl bg-white shadow p-3">
         <h1 className="text-5xl font-medium pt-8">Login De Usuário</h1>
+        <h1 className="text-2xl font-medium">Use: admin / admin</h1>
         <h2 className="font-semibold pr-[22rem]">Email</h2>
         <input
-          className="w-full px-10 py-3 text-gray-700 bg-gray-50 
+          className="w-full px-5 py-3 text-gray-700 bg-gray-50 
           focus:bg-white border border-gray-200 focus:border-gray-500 
           rounded-lg focus:outline-none"
           type={"text"}
@@ -41,7 +42,7 @@ export default function FormularioLogin() {
            />
         <h2 className="font-semibold pr-[22rem]">Senha</h2>
         <input
-          className="w-full px-10 py-3 text-gray-700 bg-gray-50 
+          className="w-full px-5 py-3 text-gray-700 bg-gray-50 
           focus:bg-white border border-gray-200 focus:border-gray-500 
           rounded-lg focus:outline-none"
           type={"password"}
