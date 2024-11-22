@@ -23,7 +23,6 @@ export const Router = () => {
             path: "/teladashboard",
             element: <TelaDashboard />,
         },
-        
     ]);
 
     return router;
