@@ -1,12 +1,15 @@
-import { BrowserRouter } from "react-router-dom";
-import { Router } from "./router/routes";
+import { QueryClientProvider } from "react-query";
+import { Paths } from "./router/routes";
+import { queryClient } from "./service/index";
 
-function App() {
-  return(
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
+const App = () => {
+  return (
+    <>
+      <QueryClientProvider client={queryClient}>
+        <Paths />
+      </QueryClientProvider>
+    </>
   );
 }
 
-export default App
+export default App;

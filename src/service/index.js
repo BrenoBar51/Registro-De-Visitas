@@ -1,5 +1,3 @@
-import axios from "axios";
+import { QueryClient } from "react-query";
 
-export const api = axios.create({
-  baseURL: 'https://museu-api-db.onrender.com/'
-});
+export const queryClient = new QueryClient();
